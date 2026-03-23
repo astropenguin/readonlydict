@@ -1,9 +1,9 @@
 # standard library
 from copy import copy
-from typing import assert_type
 
 # dependencies
 from readonlydict import ReadonlyDict
+from typing_extensions import assert_type
 
 # static-type tests
 assert_type(ReadonlyDict(a=0), ReadonlyDict[str, int])

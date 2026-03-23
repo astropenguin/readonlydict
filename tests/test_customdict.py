@@ -1,10 +1,11 @@
 # standard library
 from collections.abc import Iterable, Mapping
 from copy import copy
-from typing import TYPE_CHECKING, Any, TypeVar, overload, assert_type
+from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
 from readonlydict import ReadonlyDict
+from typing_extensions import assert_type
 
 # type variables
 K = TypeVar("K")
