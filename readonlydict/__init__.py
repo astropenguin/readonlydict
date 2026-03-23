@@ -10,33 +10,35 @@ from typing_extensions import Self
 
 # type hints
 K = TypeVar("K")
-K2 = TypeVar("K2")
 V = TypeVar("V")
+K2 = TypeVar("K2")
 V2 = TypeVar("V2")
-Items = Iterable[tuple[K, V]]
+Tuples = Iterable[tuple[K, V]]
 
 
 class ReadonlyDict(Mapping[K, V]):
-    """Read-only dictionary."""
+    """Drop-in read-only dictionary with typing and runtime compatibility."""
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # attributes for hashable and mapping
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     _data: dict[K, V]
     _hash: int | None
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # methods for initialization
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     if TYPE_CHECKING:
-        # fmt: off
+
+        @overload
+        def __new__(cls, mapping: Mapping[K, V]) -> Self: ...  # pyright: ignore
+        @overload
+        def __new__(cls, iterable: Tuples[K, V]) -> Self: ...  # pyright: ignore
         @overload
         def __new__(cls, **kwargs: V) -> "ReadonlyDict[str, V]": ...
-        @overload
-        def __new__(cls, mapping: Mapping[K, V]) -> "ReadonlyDict[K, V]": ...  # pyright: ignore
+
+        # fmt: off
         @overload
         def __new__(cls, mapping: Mapping[K, V], **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         @overload
-        def __new__(cls, iterable: Items[K, V]) -> "ReadonlyDict[K, V]": ...  # pyright: ignore
-        @overload
-        def __new__(cls, iterable: Items[K, V], **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        def __new__(cls, iterable: Tuples[K, V], **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         # fmt: on
 
         def __new__(cls, *args: Any, **kwargs: Any) -> Any:
@@ -83,7 +85,7 @@ class ReadonlyDict(Mapping[K, V]):
     def fromkeys(cls, iterable: Iterable[K2], value: V2) -> "ReadonlyDict[K2, V2]": ...
 
     @classmethod
-    def fromkeys(cls, *args: Any, **kwargs: Any) -> "ReadonlyDict[Any, Any]":
+    def fromkeys(cls, *args: Any, **kwargs: Any) -> Any:
         return cls(dict.fromkeys(*args, **kwargs))
 
     def __or__(self, other: Mapping[K2, V2]) -> "ReadonlyDict[K | K2, V | V2]":
