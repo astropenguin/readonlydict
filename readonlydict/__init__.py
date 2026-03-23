@@ -28,17 +28,17 @@ class ReadonlyDict(Mapping[K, V]):
     if TYPE_CHECKING:
 
         @overload
-        def __new__(cls, mapping: Mapping[K, V]) -> Self: ...  # pyright: ignore
+        def __new__(cls, mapping: Mapping[K, V], /) -> Self: ...  # pyright: ignore
         @overload
-        def __new__(cls, iterable: Tuples[K, V]) -> Self: ...  # pyright: ignore
+        def __new__(cls, iterable: Tuples[K, V], /) -> Self: ...  # pyright: ignore
         @overload
         def __new__(cls, **kwargs: V) -> "ReadonlyDict[str, V]": ...
 
         # fmt: off
         @overload
-        def __new__(cls, mapping: Mapping[K, V], **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         @overload
-        def __new__(cls, iterable: Tuples[K, V], **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        def __new__(cls, iterable: Tuples[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         # fmt: on
 
         def __new__(cls, *args: Any, **kwargs: Any) -> Any:
@@ -62,7 +62,7 @@ class ReadonlyDict(Mapping[K, V]):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # methods for mapping
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    def __getitem__(self, key: K) -> V:
+    def __getitem__(self, key: K, /) -> V:
         return self._data[key]
 
     def __iter__(self) -> Iterator[K]:
@@ -77,24 +77,26 @@ class ReadonlyDict(Mapping[K, V]):
     def copy(self) -> Self:
         return self
 
+    # fmt: off
     @overload
     @classmethod
-    def fromkeys(cls, iterable: Iterable[K2]) -> "ReadonlyDict[K2, None]": ...
+    def fromkeys(cls, iterable: Iterable[K2], /) -> "ReadonlyDict[K2, None]": ...
     @overload
     @classmethod
-    def fromkeys(cls, iterable: Iterable[K2], value: V2) -> "ReadonlyDict[K2, V2]": ...
+    def fromkeys(cls, iterable: Iterable[K2], value: V2, /) -> "ReadonlyDict[K2, V2]": ...
+    # fmt: on
 
     @classmethod
-    def fromkeys(cls, *args: Any, **kwargs: Any) -> Any:
-        return cls(dict.fromkeys(*args, **kwargs))
+    def fromkeys(cls, iterable: Iterable[Any], value: Any = None, /) -> Any:
+        return cls(dict.fromkeys(iterable, value))
 
-    def __or__(self, other: Mapping[K2, V2]) -> "ReadonlyDict[K | K2, V | V2]":
+    def __or__(self, other: Mapping[K2, V2], /) -> "ReadonlyDict[K | K2, V | V2]":
         if not isinstance(other, Mapping):  # pyright: ignore
             return NotImplemented
 
         return self.__class__(self._data | dict(other))  # pyright: ignore
 
-    def __ror__(self, other: Mapping[K2, V2]) -> dict[K | K2, V | V2]:
+    def __ror__(self, other: Mapping[K2, V2], /) -> dict[K | K2, V | V2]:
         if not isinstance(other, Mapping):  # pyright: ignore
             return NotImplemented
 
