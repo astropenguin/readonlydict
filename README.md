@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/pypi/dm/readonlydict?label=Downloads&color=cornflowerblue&style=flat-square)](https://pepy.tech/project/readonlydict)
 [![Tests](https://img.shields.io/github/actions/workflow/status/astropenguin/readonlydict/tests.yaml?label=Tests&style=flat-square)](https://github.com/astropenguin/readonlydict/actions)
 
-Drop-in read-only dictionary with typing and runtime compatibility
+Drop-in read-only dictionary with 100% typing and runtime compatibility
 
 ## Installation
 

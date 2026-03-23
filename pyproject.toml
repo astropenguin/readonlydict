@@ -1,7 +1,7 @@
 [project]
 name = "readonlydict"
 version = "1.0.0rc1"
-description = "Drop-in read-only dictionary with typing and runtime compatibility"
+description = "Drop-in read-only dictionary with 100% typing and runtime compatibility"
 readme = "README.md"
 keywords = [
     "dictionary",
@@ -12,11 +12,12 @@ keywords = [
     "read-only",
     "typing",
 ]
-requires-python = ">=3.10,<3.15"
+requires-python = ">=3.10,<4.0"
 dependencies = ["typing-extensions>=4,<5"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
