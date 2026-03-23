@@ -1,5 +1,6 @@
 # standard library
 from collections.abc import Iterable, Mapping
+from copy import copy
 from typing import TYPE_CHECKING, Any, TypeVar, overload, assert_type
 
 # dependencies
@@ -56,6 +57,7 @@ assert_type({"a": "0"} | CustomDict(b=1), dict[str, int | str])
 def test_copy() -> None:
     ret = CustomDict(a=0, b=1).copy()
     assert ret.copy() is ret
+    assert copy(ret) is ret
 
 
 def test_fromkeys() -> None:

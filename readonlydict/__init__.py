@@ -63,8 +63,12 @@ class ReadonlyDict(Mapping[K, V]):
             self._hash = None
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # methods for hashable
+    # methods for immutability
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    def __copy__(self) -> Self:
+        """Return ``self`` for a shallow copy."""
+        return self
+
     def __hash__(self) -> int:
         """Return ``hash(self)``."""
         if self._hash is None:
@@ -73,7 +77,7 @@ class ReadonlyDict(Mapping[K, V]):
         return self._hash
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # methods for mapping
+    # methods for instantiation
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     def __getitem__(self, key: K, /) -> V:
         """Return ``self[key]``."""

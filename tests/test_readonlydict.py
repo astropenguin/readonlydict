@@ -1,4 +1,5 @@
 # standard library
+from copy import copy
 from typing import assert_type
 
 # dependencies
@@ -20,6 +21,7 @@ assert_type({"a": "0"} | ReadonlyDict(b=1), dict[str, int | str])
 def test_copy() -> None:
     ret = ReadonlyDict(a=0, b=1).copy()
     assert ret.copy() is ret
+    assert copy(ret) is ret
 
 
 def test_fromkeys() -> None:
