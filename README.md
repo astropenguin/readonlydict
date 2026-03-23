@@ -3,6 +3,7 @@
 [![Release](https://img.shields.io/pypi/v/readonlydict?label=Release&color=cornflowerblue&style=flat-square)](https://pypi.org/project/readonlydict/)
 [![Python](https://img.shields.io/pypi/pyversions/readonlydict?label=Python&color=cornflowerblue&style=flat-square)](https://pypi.org/project/readonlydict/)
 [![Downloads](https://img.shields.io/pypi/dm/readonlydict?label=Downloads&color=cornflowerblue&style=flat-square)](https://pepy.tech/project/readonlydict)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19187089-cornflowerblue?style=flat-square)](https://doi.org/10.5281/zenodo.19187089)
 [![Tests](https://img.shields.io/github/actions/workflow/status/astropenguin/readonlydict/tests.yaml?label=Tests&style=flat-square)](https://github.com/astropenguin/readonlydict/actions)
 
 Drop-in read-only dictionary with 100% typing and runtime compatibility
@@ -49,7 +50,7 @@ TypeError: 'ReadonlyDict' object does not support item assignment
 AttributeError: 'ReadonlyDict' object has no attribute 'update'
 ```
 
-## Advanced Usage: Subclassing with Perfect Type Hints
+## Advanced Usage: Subclassing with Type Hints
 
 If you want to create your own custom read-only dictionary by subclassing ``ReadonlyDict``, you can maintain static type inference (for both [mypy] and [Pyright]) by utilizing ``TYPE_CHECKING`` and ``@overload``.
 Here is the best-practice template for subclassing:
