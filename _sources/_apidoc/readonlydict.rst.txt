@@ -1,0 +1,7 @@
+readonlydict package
+====================
+
+.. automodule:: readonlydict
+   :members:
+   :show-inheritance:
+   :undoc-members:
