@@ -1,0 +1,32 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ReadonlyDict
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Akio
+    family-names: Taniguchi
+    email: a-taniguchi@mail.kitami-it.ac.jp
+    affiliation: Kitami Institute of Technology
+    orcid: 'https://orcid.org/0000-0002-9695-6183'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19187089
+repository-code: 'https://github.com/astropenguin/readonlydict'
+url: 'https://astropenguin.github.io/readonlydict'
+abstract: Read-only dictionary with 100% typing and runtime compatibility
+keywords:
+  - dictionary
+  - hashable
+  - immutable
+  - mapping
+  - python
+  - read-only
+  - typing
+license: MIT
+version: 1.0.0
+date-released: '2026-03-24'
