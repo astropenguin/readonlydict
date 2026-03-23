@@ -1,11 +1,21 @@
 author = "Akio Taniguchi"
 copyright = "2026 Akio Taniguchi"
-project = "Readonlydict"
+project = "ReadonlyDict"
 release = version = "1.0.0rc1"
 
 autodoc_default_options = {
     "inherited-members": True,
-    "special-members": True,
+    "special-members": (
+        "__getitem__,"
+        "__hash__,"
+        "__init__,"
+        "__iter__,"
+        "__len__,"
+        "__or__,"
+        "__ror__,"
+        "__repr__,"
+        "__reversed__"
+    ),
     "undoc-members": True,
 }
 extensions = [
