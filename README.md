@@ -39,7 +39,7 @@ ReadonlyDict({'a': 0, 'b': 1})
 # It is fully hashable (can be used as a dictionary key or in a set):
 >>> hash(ro)
 -5925576189957013898
->>> set([ro])
+>>> {ro, ro}
 {ReadonlyDict({'a': 0, 'b': 1})}
 
 
@@ -71,8 +71,8 @@ V2 = TypeVar("V2")
 
 
 class CustomDict(ReadonlyDict[K, V]):
+    # Modify the return types to guarantee type inference:
     if TYPE_CHECKING:
-        # Modify the return types to guarantee type inference:
 
         @overload
         def __new__(cls, **kwargs: V) -> "CustomDict[str, V]": ...
@@ -95,8 +95,8 @@ class CustomDict(ReadonlyDict[K, V]):
 
     # Then add your custom properties or methods:
     @property
-    def first_key(self) -> K:
-        return next(iter(self))
+    def first(self) -> tuple[K, V]:
+        return next(iter(self.items()))
 ```
 
 [frozendict]: https://github.com/Marco-Sulla/python-frozendict
