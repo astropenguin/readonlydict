@@ -41,7 +41,7 @@ class ReadonlyDict(Mapping[K, V]):
         def __new__(cls, iterable: Tuples[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         # fmt: on
 
-        def __new__(cls, *args: Any, **kwargs: Any) -> Any:
+        def __new__(cls, *args: Any, **kwargs: Any) -> Any:  # type: ignore[misc]
             return super().__new__(cls)
 
     else:
