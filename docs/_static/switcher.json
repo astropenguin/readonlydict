@@ -1,7 +1,12 @@
 [
     {
-        "name": "1.0.0rc1 (latest)",
-        "version": "1.0.0rc1",
+        "name": "1.0.0 (latest)",
+        "version": "1.0.0",
         "url": "https://astropenguin.github.io/readonlydict/"
+    },
+    {
+        "name": "1.0.0rc1",
+        "version": "1.0.0rc1",
+        "url": "https://astropenguin.github.io/readonlydict/1.0.0rc1/"
     }
 ]

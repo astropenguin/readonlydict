@@ -1,6 +1,6 @@
 [project]
 name = "readonlydict"
-version = "1.0.0rc1"
+version = "1.0.0"
 description = "Drop-in read-only dictionary with 100% typing and runtime compatibility"
 readme = "README.md"
 keywords = [

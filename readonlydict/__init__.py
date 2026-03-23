@@ -1,5 +1,5 @@
 __all__ = ["ReadonlyDict"]
-__version__ = "1.0.0rc1"
+__version__ = "1.0.0"
 
 # standard library
 from collections.abc import Iterable, Iterator, Mapping
