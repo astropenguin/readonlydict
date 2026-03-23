@@ -14,7 +14,7 @@ This package is built strictly on the following formula: ``ReadonlyDict = (Built
 
 - **100% compatibility and zero custom API:** Our goal is to achieve flawless compatibility with Python's built-in dictionary in both static type checking ([mypy], [Pyright]) and runtime behavior. We simply removed in-place methods (e.g., ``pop()``, ``update()``). We do not introduce any custom methods.
 - **True immutable semantics:** The only additions are those strictly required for a read-only data structure: it is fully hashable (only if all values are hashable), and shallow copies (``self.copy()``, ``copy.copy(self)``) return itself to save memory.
-- **When to use this package:** If you want extended read-only features or custom methods, existing packages like [frozendict] or [immutabledict] are better choices. However, if your priority is pure compatibility and perfect static type inference, ReadonlyDict is the optimal choice.
+- **When to use this package:** If you want extended read-only features or custom methods, existing packages like [frozendict], [immutabledict], or [immutables] are better choices. However, if your priority is pure compatibility and perfect static type inference, ReadonlyDict is the optimal choice.
 
 ## Installation
 
@@ -101,5 +101,6 @@ class CustomDict(ReadonlyDict[K, V]):
 
 [frozendict]: https://github.com/Marco-Sulla/python-frozendict
 [immutabledict]: https://immutabledict.corenting.fr
+[immutables]: https://github.com/MagicStack/immutables
 [mypy]: https://www.mypy-lang.org
 [Pyright]: https://microsoft.github.io/pyright
