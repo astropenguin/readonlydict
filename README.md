@@ -12,9 +12,9 @@ Drop-in read-only dictionary with 100% typing and runtime compatibility
 
 This package is built strictly on the following formula: ``ReadonlyDict = (Built-in dictionary) - (In-place features) + (Read-only features)``.
 
-- **100% compatibility and zero custom API:** Our goal is to achieve flawless compatibility with Python's built-in dictionary in both static type checking ([mypy], [Pyright]) and runtime behavior. We simply removed in-place methods (e.g., ``pop()``, ``update()``). We do not introduce any custom methods.
-- **True immutable semantics:** The only additions are those strictly required for a read-only data structure: it is fully hashable (only if all values are hashable), and shallow copies (``self.copy()``, ``copy.copy(self)``) return itself to save memory.
-- **When to use this package:** If you want extended read-only features or custom methods, existing packages like [frozendict], [immutabledict], or [immutables] are better choices. However, if your priority is pure compatibility and perfect static type inference, ReadonlyDict is the optimal choice.
+- **100% compatibility and zero custom API:** Our goal is to achieve flawless compatibility with Python's built-in dictionary in both static type checking (e.g., [mypy], [Pyright]) and runtime behavior. We simply removed in-place methods (e.g., ``pop()``, ``update()``). We do not introduce any custom methods.
+- **True immutable semantics:** The only additions are those strictly required for a read-only data structure: it is fully hashable (only if all values are hashable), and shallow copies (i.e., ``self.copy()``, ``copy.copy(self)``) simply return itself to save memory.
+- **When to use this package:** If you want extended read-only features, existing packages like [frozendict], [immutabledict], or [immutables] are better choices. However, if your priority is pure compatibility and perfect static type inference, ReadonlyDict should be the optimal choice.
 
 ## Installation
 
@@ -52,7 +52,7 @@ AttributeError: 'ReadonlyDict' object has no attribute 'update'
 
 ## Advanced Usage: Subclassing with Type Hints
 
-If you want to create your own custom read-only dictionary by subclassing ``ReadonlyDict``, you can maintain static type inference (for both [mypy] and [Pyright]) by utilizing ``TYPE_CHECKING`` and ``@overload``.
+If you want to create your own custom read-only dictionary by subclassing ``ReadonlyDict``, you can maintain static type inference by utilizing ``TYPE_CHECKING`` and ``@overload``.
 Here is the best-practice template for subclassing:
 
 ```python
