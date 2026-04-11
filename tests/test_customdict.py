@@ -4,15 +4,14 @@ from copy import copy
 from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
-from readonlydict import ReadonlyDict
+from readonlydict import ReadonlyDict, Tuples
 from typing_extensions import assert_type
 
 # type variables
 K = TypeVar("K")
-K2 = TypeVar("K2")
 V = TypeVar("V")
+K2 = TypeVar("K2")
 V2 = TypeVar("V2")
-Tuples = Iterable[tuple[K, V]]
 
 
 class CustomDict(ReadonlyDict[K, V]):

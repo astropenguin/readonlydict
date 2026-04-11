@@ -1,4 +1,4 @@
-__all__ = ["ReadonlyDict"]
+__all__ = ["ReadonlyDict", "Tuples"]
 __version__ = "1.1.0"
 
 # standard library
@@ -13,7 +13,9 @@ K = TypeVar("K")
 V = TypeVar("V")
 K2 = TypeVar("K2")
 V2 = TypeVar("V2")
+
 Tuples = Iterable[tuple[K, V]]
+"""Type alias of key-value pairs for mapping."""
 
 
 class ReadonlyDict(Mapping[K, V]):

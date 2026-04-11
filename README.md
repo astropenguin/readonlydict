@@ -10,7 +10,8 @@ Drop-in read-only dictionary with 100% typing and runtime compatibility
 
 ## Overview: Why ReadonlyDict?
 
-This package is built strictly on the following formula: ``ReadonlyDict = (Built-in dictionary) - (In-place features) + (Read-only features)``.
+This package is built strictly on the following formula:
+``ReadonlyDict = (built-in dictionary features) - (in-place features) + (read-only features)``.
 
 - **100% compatibility and zero custom API:** Our goal is to achieve flawless compatibility with Python's built-in dictionary in both static type checking (e.g., [mypy], [Pyright]) and runtime behavior. We simply removed in-place methods (e.g., ``pop()``, ``update()``). We do not introduce any custom methods.
 - **True immutable semantics:** The only additions are those strictly required for a read-only data structure: it is fully hashable (only if all values are hashable), and shallow copies (i.e., ``self.copy()``, ``copy.copy(self)``) simply return itself to save memory.
@@ -61,12 +62,12 @@ from collections.abc import Iterable, Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
-from readonlydict import ReadonlyDict
+from readonlydict import ReadonlyDict, Tuples
 
 # type variables
 K = TypeVar("K")
-K2 = TypeVar("K2")
 V = TypeVar("V")
+K2 = TypeVar("K2")
 V2 = TypeVar("V2")
 
 
@@ -79,7 +80,7 @@ class CustomDict(ReadonlyDict[K, V]):
         @overload
         def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
         @overload
-        def __new__(cls, iterable: Iterable[tuple[K, V]], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
+        def __new__(cls, iterable: Tuples[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
         def __new__(cls, *args: Any, **kwargs: Any) -> Any: ... # type: ignore[misc]
 
         @overload
