@@ -113,6 +113,16 @@ class ReadonlyDict(Mapping[K, V]):
         and values set to ``value``."""
         return cls(dict.fromkeys(iterable, value))
 
+    def _repr_pretty_(self, printer: Any, cycle: bool, /) -> None:
+        """Define pretty printing rules for ``self``."""
+        name = self.__class__.__name__
+
+        if cycle:
+            printer.text(f"{name}({{...}})")
+        else:
+            with printer.group(len(name) + 1, f"{name}(", ")"):
+                printer.pretty(self._data)
+
     def __or__(self, value: Mapping[K2, V2], /) -> "ReadonlyDict[K | K2, V | V2]":
         """Return ``self|value``."""
         if not isinstance(value, Mapping):  # pyright: ignore
