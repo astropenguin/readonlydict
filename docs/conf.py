@@ -1,7 +1,7 @@
 author = "Akio Taniguchi"
 copyright = "2026 Akio Taniguchi"
 project = "ReadonlyDict"
-release = version = "1.0.0"
+release = version = "1.1.0"
 
 autodoc_default_options = {
     "inherited-members": True,
