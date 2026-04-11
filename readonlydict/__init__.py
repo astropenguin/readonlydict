@@ -17,7 +17,7 @@ Tuples = Iterable[tuple[K, V]]
 
 
 class ReadonlyDict(Mapping[K, V]):
-    """Drop-in read-only dictionary with typing and runtime compatibility.
+    """Drop-in read-only dictionary with 100% typing and runtime compatibility.
 
     - ``ReadonlyDict()`` -> New empty read-only dictionary.
     - ``ReadonlyDict(mapping)`` -> New read-only dictionary
@@ -109,22 +109,23 @@ class ReadonlyDict(Mapping[K, V]):
 
     @classmethod
     def fromkeys(cls, iterable: Iterable[Any], value: Any = None, /) -> Any:
-        """Create a new read-only dictionary with keys from ``iterable`` and values set to ``value``."""
+        """Create a new read-only dictionary with keys from ``iterable``
+        and values set to ``value``."""
         return cls(dict.fromkeys(iterable, value))
 
-    def __or__(self, other: Mapping[K2, V2], /) -> "ReadonlyDict[K | K2, V | V2]":
+    def __or__(self, value: Mapping[K2, V2], /) -> "ReadonlyDict[K | K2, V | V2]":
         """Return ``self|value``."""
-        if not isinstance(other, Mapping):  # pyright: ignore
+        if not isinstance(value, Mapping):  # pyright: ignore
             return NotImplemented
 
-        return self.__class__(self._data | dict(other))  # pyright: ignore
+        return self.__class__(self._data | dict(value))  # pyright: ignore
 
-    def __ror__(self, other: Mapping[K2, V2], /) -> dict[K | K2, V | V2]:
+    def __ror__(self, value: Mapping[K2, V2], /) -> dict[K | K2, V | V2]:
         """Return ``value|self``."""
-        if not isinstance(other, Mapping):  # pyright: ignore
+        if not isinstance(value, Mapping):  # pyright: ignore
             return NotImplemented
 
-        return dict(other) | self._data
+        return dict(value) | self._data
 
     def __repr__(self) -> str:
         """Return ``repr(self)``."""
