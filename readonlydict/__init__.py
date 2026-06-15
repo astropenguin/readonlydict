@@ -1,8 +1,8 @@
-__all__ = ["ReadonlyDict", "Tuples"]
+__all__ = ["HashableMapping", "ReadonlyDict", "Tuples"]
 __version__ = "1.1.0"
 
 # standard library
-from collections.abc import Iterable, Iterator, Mapping
+from collections.abc import Hashable, Iterable, Iterator, Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
@@ -18,7 +18,13 @@ Tuples = Iterable[tuple[K, V]]
 """Type alias of key-value pairs for mapping."""
 
 
-class ReadonlyDict(Mapping[K, V]):
+class HashableMapping(Hashable, Mapping[K, V]):
+    """Abstract base class for mapping objects that are also hashable."""
+
+    pass
+
+
+class ReadonlyDict(HashableMapping[K, V]):
     """Drop-in read-only dictionary with 100% typing and runtime compatibility.
 
     - ``ReadonlyDict()`` -> New empty read-only dictionary.
@@ -30,6 +36,11 @@ class ReadonlyDict(Mapping[K, V]):
       initialized with the ``name=value`` pairs in the keyword argument list.
       For example: ``ReadonlyDict(one=1, two=2)``.
 
+    Note:
+        While this dictionary is immutable, calling ``hash()`` on it requires
+        that all of its values are also hashable. If the dictionary contains
+        unhashable values (e.g., lists or standard dicts), a ``TypeError``
+        will be raised when the hash is computed.
     """
 
     _data: dict[K, V]
