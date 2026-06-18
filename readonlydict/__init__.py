@@ -1,5 +1,5 @@
-__all__ = ["HashableMapping", "ReadonlyDict", "Tuples"]
-__version__ = "1.1.0"
+__all__ = ["HashableMapping", "Item", "Items", "ReadonlyDict"]
+__version__ = "2.0.0"
 
 # standard library
 from collections.abc import Hashable, Iterable, Iterator, Mapping
@@ -8,13 +8,19 @@ from typing import TYPE_CHECKING, Any, TypeVar, overload
 # dependencies
 from typing_extensions import Self
 
-# type hints
+# type variables
 K = TypeVar("K")
 V = TypeVar("V")
 K2 = TypeVar("K2")
 V2 = TypeVar("V2")
 
-Tuples = Iterable[tuple[K, V]]
+
+# public features
+Item = tuple[K, V]
+"""Type alias of a key-value pair for mapping."""
+
+
+Items = Iterable[Item[K, V]]
 """Type alias of key-value pairs for mapping."""
 
 
@@ -52,17 +58,17 @@ class ReadonlyDict(HashableMapping[K, V]):
     if TYPE_CHECKING:
 
         @overload
-        def __new__(cls, mapping: Mapping[K, V], /) -> Self: ...  # pyright: ignore
+        def __new__(cls, iterable: Items[K, V], /) -> Self: ...  # pyright: ignore
         @overload
-        def __new__(cls, iterable: Tuples[K, V], /) -> Self: ...  # pyright: ignore
+        def __new__(cls, mapping: Mapping[K, V], /) -> Self: ...  # pyright: ignore
         @overload
         def __new__(cls, **kwargs: V) -> "ReadonlyDict[str, V]": ...
 
         # fmt: off
         @overload
-        def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        def __new__(cls, iterable: Items[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         @overload
-        def __new__(cls, iterable: Tuples[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         # fmt: on
 
         def __new__(cls, *args: Any, **kwargs: Any) -> Any:  # type: ignore[misc]

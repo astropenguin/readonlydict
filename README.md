@@ -62,7 +62,7 @@ from collections.abc import Iterable, Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
-from readonlydict import ReadonlyDict, Tuples
+from readonlydict import Items, ReadonlyDict
 
 # type variables
 K = TypeVar("K")
@@ -78,10 +78,10 @@ class CustomDict(ReadonlyDict[K, V]):
         @overload
         def __new__(cls, **kwargs: V) -> "CustomDict[str, V]": ...
         @overload
-        def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
+        def __new__(cls, iterable: Items[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
         @overload
-        def __new__(cls, iterable: Tuples[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
-        def __new__(cls, *args: Any, **kwargs: Any) -> Any: ... # type: ignore[misc]
+        def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "CustomDict[K | str, V | V2]": ...
+        def __new__(cls, *args: Any, **kwargs: Any) -> Any: ... # type: ignore
 
         @overload
         @classmethod
