@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>readonlydict package &#8212; ReadonlyDict 1.1.0 documentation</title>
+    <title>readonlydict package &#8212; ReadonlyDict 2.0.0 documentation</title>
   
   
   
@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_apidoc/readonlydict';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://astropenguin.github.io/readonlydict/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.1.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.0.0';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="ReadonlyDict" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.1.0" />
+  <meta name="docsearch:version" content="2.0.0" />
   
     
     <script src="../_static/searchtools.js"></script>
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -189,11 +191,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -206,8 +215,7 @@
           
           
           
-          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -302,11 +310,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -319,8 +334,7 @@
           
           
           
-          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
 </ul></div>
         
@@ -399,9 +413,76 @@
   <section id="module-readonlydict">
 <span id="readonlydict-package"></span><h1>readonlydict package<a class="headerlink" href="#module-readonlydict" title="Link to this heading">#</a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">readonlydict.</span></span><span class="sig-name descname"><span class="pre">HashableMapping</span></span><a class="reference internal" href="../_modules/readonlydict.html#HashableMapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#readonlydict.HashableMapping" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]</p>
+<p>Abstract base class for mapping objects that are also hashable.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.__getitem__">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#readonlydict.HashableMapping.__getitem__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.__hash__">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#readonlydict.HashableMapping.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.__iter__">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#readonlydict.HashableMapping.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.__len__">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#readonlydict.HashableMapping.__len__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.__reversed__">
+<span class="sig-name descname"><span class="pre">__reversed__</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#readonlydict.HashableMapping.__reversed__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">D[k]</span> <span class="pre">if</span> <span class="pre">k</span> <span class="pre">in</span> <span class="pre">D,</span> <span class="pre">else</span> <span class="pre">d.</span>&#160; <span class="pre">d</span> <span class="pre">defaults</span> <span class="pre">to</span> <span class="pre">None.</span></span></span><a class="headerlink" href="#readonlydict.HashableMapping.get" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">a</span> <span class="pre">set-like</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D's</span> <span class="pre">items</span></span></span><a class="headerlink" href="#readonlydict.HashableMapping.items" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">a</span> <span class="pre">set-like</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D's</span> <span class="pre">keys</span></span></span><a class="headerlink" href="#readonlydict.HashableMapping.keys" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="readonlydict.HashableMapping.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">an</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D's</span> <span class="pre">values</span></span></span><a class="headerlink" href="#readonlydict.HashableMapping.values" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="readonlydict.Item">
+<span class="sig-prename descclassname"><span class="pre">readonlydict.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><a class="headerlink" href="#readonlydict.Item" title="Link to this definition">#</a></dt>
+<dd><p>Type alias of a key-value pair for mapping.</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="readonlydict.Items">
+<span class="sig-prename descclassname"><span class="pre">readonlydict.</span></span><span class="sig-name descname"><span class="pre">Items</span></span><a class="headerlink" href="#readonlydict.Items" title="Link to this definition">#</a></dt>
+<dd><p>Type alias of key-value pairs for mapping.</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]]</p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="readonlydict.ReadonlyDict">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">readonlydict.</span></span><span class="sig-name descname"><span class="pre">ReadonlyDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/readonlydict.html#ReadonlyDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#readonlydict.ReadonlyDict" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]</p>
+<dd><p>Bases: <a class="reference internal" href="#readonlydict.HashableMapping" title="readonlydict.HashableMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">HashableMapping</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]</p>
 <p>Drop-in read-only dictionary with 100% typing and runtime compatibility.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ReadonlyDict()</span></code> -&gt; New empty read-only dictionary.</p></li>
@@ -413,6 +494,13 @@ initialized as if via: <code class="docutils literal notranslate"><span class="p
 initialized with the <code class="docutils literal notranslate"><span class="pre">name=value</span></code> pairs in the keyword argument list.
 For example: <code class="docutils literal notranslate"><span class="pre">ReadonlyDict(one=1,</span> <span class="pre">two=2)</span></code>.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While this dictionary is immutable, calling <code class="docutils literal notranslate"><span class="pre">hash()</span></code> on it requires
+that all of its values are also hashable. If the dictionary contains
+unhashable values (e.g., lists or standard dicts), a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>
+will be raised when the hash is computed.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="readonlydict.ReadonlyDict.__getitem__">
 <span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">V</span></span></span><a class="reference internal" href="../_modules/readonlydict.html#ReadonlyDict.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#readonlydict.ReadonlyDict.__getitem__" title="Link to this definition">#</a></dt>
@@ -504,13 +592,6 @@ and values set to <code class="docutils literal notranslate"><span class="pre">v
 
 </dd></dl>
 
-<dl class="py data">
-<dt class="sig sig-object py" id="readonlydict.Tuples">
-<span class="sig-prename descclassname"><span class="pre">readonlydict.</span></span><span class="sig-name descname"><span class="pre">Tuples</span></span><a class="headerlink" href="#readonlydict.Tuples" title="Link to this definition">#</a></dt>
-<dd><p>Type alias of key-value pairs for mapping.</p>
-<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">K</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code>]]</p>
-</dd></dl>
-
 </section>
 
 
@@ -551,6 +632,20 @@ and values set to <code class="docutils literal notranslate"><span class="pre">v
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping"><code class="docutils literal notranslate"><span class="pre">HashableMapping</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.__getitem__"><code class="docutils literal notranslate"><span class="pre">HashableMapping.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.__hash__"><code class="docutils literal notranslate"><span class="pre">HashableMapping.__hash__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.__iter__"><code class="docutils literal notranslate"><span class="pre">HashableMapping.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.__len__"><code class="docutils literal notranslate"><span class="pre">HashableMapping.__len__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.__reversed__"><code class="docutils literal notranslate"><span class="pre">HashableMapping.__reversed__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.get"><code class="docutils literal notranslate"><span class="pre">HashableMapping.get()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.items"><code class="docutils literal notranslate"><span class="pre">HashableMapping.items()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.keys"><code class="docutils literal notranslate"><span class="pre">HashableMapping.keys()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.HashableMapping.values"><code class="docutils literal notranslate"><span class="pre">HashableMapping.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.Items"><code class="docutils literal notranslate"><span class="pre">Items</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.ReadonlyDict"><code class="docutils literal notranslate"><span class="pre">ReadonlyDict</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.ReadonlyDict.__getitem__"><code class="docutils literal notranslate"><span class="pre">ReadonlyDict.__getitem__()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.ReadonlyDict.__hash__"><code class="docutils literal notranslate"><span class="pre">ReadonlyDict.__hash__()</span></code></a></li>
@@ -569,7 +664,6 @@ and values set to <code class="docutils literal notranslate"><span class="pre">v
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.ReadonlyDict.values"><code class="docutils literal notranslate"><span class="pre">ReadonlyDict.values()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readonlydict.Tuples"><code class="docutils literal notranslate"><span class="pre">Tuples</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -595,8 +689,8 @@ and values set to <code class="docutils literal notranslate"><span class="pre">v
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -630,7 +724,7 @@ and values set to <code class="docutils literal notranslate"><span class="pre">v
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
 </p></div>
       
     </div>

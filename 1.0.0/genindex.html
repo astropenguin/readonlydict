@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; ReadonlyDict 1.1.0 documentation</title>
+    <title>Index &#8212; ReadonlyDict 2.0.0 documentation</title>
   
   
   
@@ -26,25 +26,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fc837d61"></script>
+    <script src="_static/documentation_options.js?v=51b770b3"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://astropenguin.github.io/readonlydict/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.1.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.0.0';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
@@ -53,7 +53,7 @@
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.1.0" />
+  <meta name="docsearch:version" content="2.0.0" />
   
     
     <script src="_static/searchtools.js"></script>
@@ -71,7 +71,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -187,11 +189,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -204,8 +213,7 @@
           
           
           
-          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -298,11 +306,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -315,8 +330,7 @@
           
           
           
-          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/astropenguin/readonlydict" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
 </ul></div>
         
@@ -360,32 +374,50 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#K"><strong>K</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#R"><strong>R</strong></a>
- | <a href="#T"><strong>T</strong></a>
  | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__getitem__">__getitem__() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.__getitem__">__getitem__() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__getitem__">(readonlydict.ReadonlyDict method)</a>
 </li>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__hash__">__hash__() (readonlydict.ReadonlyDict method)</a>
+      </ul></li>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.__hash__">__hash__() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__hash__">(readonlydict.ReadonlyDict method)</a>
 </li>
+      </ul></li>
       <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__init__">__init__() (readonlydict.ReadonlyDict method)</a>
 </li>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__iter__">__iter__() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.__iter__">__iter__() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__iter__">(readonlydict.ReadonlyDict method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__len__">__len__() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.__len__">__len__() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__len__">(readonlydict.ReadonlyDict method)</a>
 </li>
+      </ul></li>
       <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__or__">__or__() (readonlydict.ReadonlyDict method)</a>
 </li>
       <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__repr__">__repr__() (readonlydict.ReadonlyDict method)</a>
+</li>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.__reversed__">__reversed__ (readonlydict.HashableMapping attribute)</a>
 </li>
       <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.__reversed__">__reversed__() (readonlydict.ReadonlyDict method)</a>
 </li>
@@ -413,7 +445,19 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.get">get() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.get">get() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.get">(readonlydict.ReadonlyDict method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping">HashableMapping (class in readonlydict)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -421,16 +465,30 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.items">items() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.Item">Item (in module readonlydict)</a>
 </li>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.Items">Items (in module readonlydict)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.items">items() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.items">(readonlydict.ReadonlyDict method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.keys">keys() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.keys">keys() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.keys">(readonlydict.ReadonlyDict method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -464,19 +522,15 @@
   </ul></td>
 </tr></table>
 
-<h2 id="T">T</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.Tuples">Tuples (in module readonlydict)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.values">values() (readonlydict.ReadonlyDict method)</a>
+      <li><a href="_apidoc/readonlydict.html#readonlydict.HashableMapping.values">values() (readonlydict.HashableMapping method)</a>
+
+      <ul>
+        <li><a href="_apidoc/readonlydict.html#readonlydict.ReadonlyDict.values">(readonlydict.ReadonlyDict method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -509,8 +563,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -544,7 +598,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
 </p></div>
       
     </div>
