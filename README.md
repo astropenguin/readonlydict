@@ -66,7 +66,7 @@ from readonlydict import Items, ReadonlyDict
 
 # type variables
 K = TypeVar("K", bound=Hashable)
-V = TypeVar("V")
+V = TypeVar("V", covariant=True)
 K2 = TypeVar("K2", bound=Hashable)
 V2 = TypeVar("V2")
 
