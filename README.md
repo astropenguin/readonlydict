@@ -58,16 +58,16 @@ Here is the best-practice template for subclassing:
 
 ```python
 # standard library
-from collections.abc import Iterable, Mapping
+from collections.abc import Hashable, Iterable, Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, overload
 
 # dependencies
 from readonlydict import Items, ReadonlyDict
 
 # type variables
-K = TypeVar("K")
-V = TypeVar("V")
-K2 = TypeVar("K2")
+K = TypeVar("K", bound=Hashable)
+V = TypeVar("V", covariant=True)
+K2 = TypeVar("K2", bound=Hashable)
 V2 = TypeVar("V2")
 
 
