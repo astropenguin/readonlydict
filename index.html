@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ReadonlyDict &#8212; ReadonlyDict 2.0.0 documentation</title>
+    <title>ReadonlyDict &#8212; ReadonlyDict 2.1.0 documentation</title>
   
   
   
@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
-    <script src="_static/documentation_options.js?v=51b770b3"></script>
+    <script src="_static/documentation_options.js?v=20623aea"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://astropenguin.github.io/readonlydict/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.0.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.1.0';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
@@ -55,7 +55,7 @@
     <link rel="next" title="readonlydict package" href="_apidoc/readonlydict.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="2.0.0" />
+  <meta name="docsearch:version" content="2.1.0" />
   
     
     <script src="_static/searchtools.js"></script>
@@ -405,21 +405,21 @@
 <span class="c1"># Initialization works just like the built-in dictionary:</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ro</span> <span class="o">=</span> <span class="n">ReadonlyDict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ro</span>
-<span class="n">ReadonlyDict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">ReadonlyDict</span><span class="p">({</span><span class="s1">'a'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 
 
 <span class="c1"># It is fully hashable (can be used as a dictionary key or in a set):</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">ro</span><span class="p">)</span>
 <span class="o">-</span><span class="mi">5925576189957013898</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">ro</span><span class="p">,</span> <span class="n">ro</span><span class="p">}</span>
-<span class="p">{</span><span class="n">ReadonlyDict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})}</span>
+<span class="p">{</span><span class="n">ReadonlyDict</span><span class="p">({</span><span class="s1">'a'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})}</span>
 
 
 <span class="c1"># Mutation is strictly prohibited (static type checkers will also warn you):</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ro</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;ReadonlyDict&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ro</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">'ReadonlyDict'</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ro</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;ReadonlyDict&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;update&#39;</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">'ReadonlyDict'</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">'update'</span>
 </pre></div>
 </div>
 </section>
@@ -428,17 +428,17 @@
 <p>If you want to create your own custom read-only dictionary by subclassing <code class="docutils literal notranslate"><span class="pre">ReadonlyDict</span></code>, you can maintain static type inference by utilizing <code class="docutils literal notranslate"><span class="pre">TYPE_CHECKING</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;overload</span></code>.
 Here is the best-practice template for subclassing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># standard library</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">overload</span>
 
 <span class="c1"># dependencies</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">readonlydict</span><span class="w"> </span><span class="kn">import</span> <span class="n">Items</span><span class="p">,</span> <span class="n">ReadonlyDict</span>
 
 <span class="c1"># type variables</span>
-<span class="n">K</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">)</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">)</span>
-<span class="n">K2</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;K2&quot;</span><span class="p">)</span>
-<span class="n">V2</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;V2&quot;</span><span class="p">)</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"K"</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Hashable</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"V"</span><span class="p">,</span> <span class="n">covariant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">K2</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"K2"</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Hashable</span><span class="p">)</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"V2"</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">CustomDict</span><span class="p">(</span><span class="n">ReadonlyDict</span><span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">]):</span>
@@ -446,23 +446,23 @@ Here is the best-practice template for subclassing:</p>
     <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
 
         <span class="nd">@overload</span>
-        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[str, V]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[str, V]"</span><span class="p">:</span> <span class="o">...</span>
         <span class="nd">@overload</span>
-        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Items</span><span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[K | str, V | V2]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Items</span><span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[K | str, V | V2]"</span><span class="p">:</span> <span class="o">...</span>
         <span class="nd">@overload</span>
-        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mapping</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[K | str, V | V2]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mapping</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">V2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[K | str, V | V2]"</span><span class="p">:</span> <span class="o">...</span>
         <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span> <span class="o">...</span> <span class="c1"># type: ignore</span>
 
         <span class="nd">@overload</span>
         <span class="nd">@classmethod</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">K2</span><span class="p">],</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[K2, None]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">K2</span><span class="p">],</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[K2, None]"</span><span class="p">:</span> <span class="o">...</span>
         <span class="nd">@overload</span>
         <span class="nd">@classmethod</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">K2</span><span class="p">],</span> <span class="n">value</span><span class="p">:</span> <span class="n">V2</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[K2, V2]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">K2</span><span class="p">],</span> <span class="n">value</span><span class="p">:</span> <span class="n">V2</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[K2, V2]"</span><span class="p">:</span> <span class="o">...</span>
         <span class="nd">@classmethod</span>
         <span class="k">def</span><span class="w"> </span><span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span> <span class="o">...</span>
 
-        <span class="k">def</span><span class="w"> </span><span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">K2</span><span class="p">,</span> <span class="n">V2</span><span class="p">],</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CustomDict[K | K2, V | V2]&quot;</span><span class="p">:</span> <span class="o">...</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">K2</span><span class="p">,</span> <span class="n">V2</span><span class="p">],</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"CustomDict[K | K2, V | V2]"</span><span class="p">:</span> <span class="o">...</span>
 
     <span class="c1"># Then add your custom properties or methods:</span>
     <span class="nd">@property</span>
@@ -542,8 +542,8 @@ Here is the best-practice template for subclassing:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -577,7 +577,7 @@ Here is the best-practice template for subclassing:</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
