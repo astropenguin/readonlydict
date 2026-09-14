@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING, Any, TypeVar, overload
 from typing_extensions import Self
 
 # type variables
-K = TypeVar("K")
+K = TypeVar("K", bound=Hashable)
 V = TypeVar("V")
-K2 = TypeVar("K2")
+K2 = TypeVar("K2", bound=Hashable)
 V2 = TypeVar("V2")
 
 
