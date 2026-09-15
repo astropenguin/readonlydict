@@ -1,5 +1,5 @@
 __all__ = ["HashableMapping", "Item", "Items", "ReadonlyDict"]
-__version__ = "2.1.0"
+__version__ = "2.1.1"
 
 # standard library
 from collections.abc import Hashable, Iterable, Iterator, Mapping
