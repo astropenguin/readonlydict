@@ -1,5 +1,5 @@
 __all__ = ["HashableMapping", "Item", "Items", "ReadonlyDict"]
-__version__ = "2.1.0"
+__version__ = "2.1.1"
 
 # standard library
 from collections.abc import Hashable, Iterable, Iterator, Mapping
@@ -57,22 +57,19 @@ class ReadonlyDict(HashableMapping[K, V]):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     if TYPE_CHECKING:
 
+        # fmt: off
         @overload
         def __new__(cls, iterable: Items[K, V], /) -> Self: ...  # pyright: ignore
         @overload
-        def __new__(cls, mapping: Mapping[K, V], /) -> Self: ...  # pyright: ignore
-        @overload
-        def __new__(cls, **kwargs: V) -> "ReadonlyDict[str, V]": ...
-
-        # fmt: off
-        @overload
         def __new__(cls, iterable: Items[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
         @overload
+        def __new__(cls, mapping: Mapping[K, V], /) -> Self: ...  # pyright: ignore
+        @overload
         def __new__(cls, mapping: Mapping[K, V], /, **kwargs: V2) -> "ReadonlyDict[K | str, V | V2]": ...
+        @overload
+        def __new__(cls, **kwargs: V2) -> "ReadonlyDict[str, V2]": ...
         # fmt: on
-
-        def __new__(cls, *args: Any, **kwargs: Any) -> Any:  # type: ignore[misc]
-            return super().__new__(cls)
+        def __new__(cls, *args: Any, **kwargs: Any) -> Any: ...  # type: ignore[misc]
 
     else:
 
@@ -125,7 +122,6 @@ class ReadonlyDict(HashableMapping[K, V]):
     @classmethod
     def fromkeys(cls, iterable: Iterable[K2], value: V2, /) -> "ReadonlyDict[K2, V2]": ...
     # fmt: on
-
     @classmethod
     def fromkeys(cls, iterable: Iterable[Any], value: Any = None, /) -> Any:
         """Create a new read-only dictionary with keys from ``iterable``
